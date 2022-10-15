@@ -1,0 +1,101 @@
+:root{
+	--escala: 20px;
+	--top-primera-fila: calc(var(--escala) * 2);
+	--top-segunda-fila: calc(var(--escala) * 6);
+	--left-horizontales: calc( var(--escala) * .8)
+}
+
+body{
+	background-color: brown;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+#container{
+	background-color: rgb(85, 38, 17);
+	margin: auto;
+	padding: 3rem;
+}
+
+.numero {
+	display: inline-block;
+  position: relative;
+	height: calc( var(--escala) * 9 );
+	width: calc( var(--escala) * 6.25 );
+}
+.numero_chico {
+	display: inline-block;
+  position: relative;
+	height: calc( var(--escala) * 9 );
+	width: calc( var(--escala) * 1 );
+}
+
+.punto:first-child {
+	display: inline-block;
+  position: absolute;
+	top: calc( var(--escala) * 2 );
+	left: calc( var(--escala) * -0.45 );
+	background-color: red;
+	height: calc( var(--escala) * 1 );
+	width: calc( var(--escala) * 1 );
+	transform: rotate(45deg);
+}
+
+.punto:last-child {
+	display: inline-block;
+  position: absolute;
+	top: calc( var(--escala) * 6 );
+	left: calc( var(--escala) * -0.45 );
+	background-color: red;
+	height: calc( var(--escala) * 1 );
+	width: calc( var(--escala) * 1 );
+	transform: rotate(45deg);
+}
+
+.on{
+	fill: red !important;
+}
+
+.segmento {
+	height: var(--escala);
+	position: absolute;
+	fill: rgb(79, 29, 29);
+}
+
+.segmento:nth-child(1) {
+	top: 0%;
+	left: var(--left-horizontales);
+}
+.segmento:nth-child(2) {
+	top: var(--top-primera-fila);
+	right: 0px;
+	transform: rotate(90deg);
+}
+.segmento:nth-child(3) {
+	top: var(--top-segunda-fila);
+	right: 0px;
+	transform: rotate(90deg);
+}
+.segmento:nth-child(4) {
+	top: calc( var(--escala) * 8 );
+	left: var(--left-horizontales);
+}
+.segmento:nth-child(5) {
+	top: var(--top-segunda-fila);
+	left: calc( var(--escala) * -1 );
+	transform: rotate(90deg);
+}
+.segmento:nth-child(6) {
+	top: calc( var(--escala) * 4 );
+	left: var(--left-horizontales);
+}
+.segmento:nth-child(7) {
+	top: var(--top-primera-fila);
+	left: calc( var(--escala) * -1 );
+	transform: rotate(90deg);
+}
+.segmento:nth-child(8) {
+	transform: rotate(90deg);
+}
