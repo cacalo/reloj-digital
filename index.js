@@ -16,7 +16,7 @@ const mapaNumeros = [
 
 function setNumero(indice,valor){
     segmentos[indice].forEach((segmento, j) => {
-        segmento.classList.toggle("on", mapaNumeros[valor][j])
+        segmento.children[0].classList.toggle("on", mapaNumeros[valor][j])
     })
 }
 
@@ -32,8 +32,6 @@ const segundero = setInterval(()=>{
     setNumero(4,segundos[0]);
     setNumero(5,segundos[1]);
 },1000)
-
-//setNumero(7,7);
 
 function getTwoNumbers(doubleDigit){
     if(doubleDigit.length === 2){
