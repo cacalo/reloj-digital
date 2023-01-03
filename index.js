@@ -15,29 +15,29 @@ const mapaNumeros = [
 ];
 
 function setNumero(indice,valor){
-    segmentos[indice].forEach((segmento, j) => {
-        segmento.children[0].classList.toggle("on", mapaNumeros[valor][j])
-    })
+    segmentos[indice].forEach((segmento, i) => {
+        segmento.children[0].classList.toggle("on", mapaNumeros[valor][i])
+    });
 }
 
 const segundero = setInterval(()=>{
     const ya = new Date();
-    const horas = getTwoNumbers(ya.getHours().toString());
-    const minutos = getTwoNumbers(ya.getMinutes().toString());
-    const segundos = getTwoNumbers(ya.getSeconds().toString())
+    const horas = getDosNumeros(ya.getHours().toString());
+    const minutos = getDosNumeros(ya.getMinutes().toString());
+    const segundos = getDosNumeros(ya.getSeconds().toString())
     setNumero(0,horas[0]);
     setNumero(1,horas[1]);
     setNumero(2,minutos[0]);
     setNumero(3,minutos[1]);
     setNumero(4,segundos[0]);
     setNumero(5,segundos[1]);
-},1000)
+},1000);
 
-function getTwoNumbers(doubleDigit){
-    if(doubleDigit.length === 2){
-        const first = doubleDigit.slice(0,1);
-        const second = doubleDigit.slice(1);
-        return [first, second];
+function getDosNumeros(dosDigitos){
+    if(dosDigitos.length === 2){
+        const primero = dosDigitos.slice(0,1);
+        const segundo = dosDigitos.slice(1);
+        return [primero, segundo];
     }
-    return [0,doubleDigit]
+    return [0,dosDigitos];
 }
