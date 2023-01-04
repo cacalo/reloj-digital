@@ -40,6 +40,7 @@ body{
 .segmento{
 	position: absolute;
 	height: var(--escala);
+	fill:rgba(243, 120, 120, 0.097)
 }
 
 .segmento:nth-child(1){
