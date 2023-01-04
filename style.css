@@ -1,110 +1,107 @@
-:root {
-  --escala: 20px;
-  --top-primera-fila: calc(var(--escala) * 2);
+:root{
+	--escala: 20px;
+	--top-primera-fila: calc(var(--escala) * 2);
   --top-segunda-fila: calc(var(--escala) * 6);
   --left-horizontales: calc(var(--escala) * 0.8);
+	--left-primera-columna: calc(var(--escala) * -1);
+	--right-segunda-columna: 0px;
 }
 
-body {
-  background-color: brown;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
+body{
+	background-color: brown;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 
-#container {
-  background-color: rgb(85, 38, 17);
-  margin: auto;
-  padding: 3rem;
-  animation-name: glow;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
+#container{
+	display: flex;
+	background-color: rgb(85, 38, 17);
+	padding: 3rem;
+	animation-name: glow;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-timing-function: ease-in-out;
 }
 
-.numero {
-  display: inline-block;
-  position: relative;
-  height: calc(var(--escala) * 9);
-  width: calc(var(--escala) * 6.25);
-}
-.doble_punto {
-  display: inline-block;
-  position: relative;
-  height: calc(var(--escala) * 9);
-  width: calc(var(--escala) * 1);
+.numero{
+	position: relative;
+	height: calc(var(--escala) * 9);
+	width: calc(var(--escala) * 6.25);;
 }
 
-.punto:first-child {
-  display: inline-block;
-  position: absolute;
-  top: calc(var(--escala) * 2);
-  left: calc(var(--escala) * -0.45);
-  background-color: red;
-  height: calc(var(--escala) * 1);
-  width: calc(var(--escala) * 1);
-  transform: rotate(45deg);
-}
-
-.punto:last-child {
-  display: inline-block;
-  position: absolute;
-  top: calc(var(--escala) * 6);
-  left: calc(var(--escala) * -0.45);
-  background-color: red;
-  height: calc(var(--escala) * 1);
-  width: calc(var(--escala) * 1);
-  transform: rotate(45deg);
-}
-
-.segmento {
-  height: var(--escala);
-  position: absolute;
-  fill: rgb(79, 29, 29);
-}
-
-.segmento:nth-child(1) {
-  top: 0%;
-  left: var(--left-horizontales);
-}
-.segmento:nth-child(2) {
-  top: var(--top-primera-fila);
-  right: 0px;
-  transform: rotate(90deg);
-}
-.segmento:nth-child(3) {
-  top: var(--top-segunda-fila);
-  right: 0px;
-  transform: rotate(90deg);
-}
-.segmento:nth-child(4) {
-  top: calc(var(--escala) * 8);
-  left: var(--left-horizontales);
-}
-.segmento:nth-child(5) {
-  top: var(--top-segunda-fila);
-  left: calc(var(--escala) * -1);
-  transform: rotate(90deg);
-}
-.segmento:nth-child(6) {
-  top: calc(var(--escala) * 4);
-  left: var(--left-horizontales);
-}
-.segmento:nth-child(7) {
-  top: var(--top-primera-fila);
-  left: calc(var(--escala) * -1);
-  transform: rotate(90deg);
-}
-.segmento:nth-child(8) {
-  transform: rotate(90deg);
-}
-
-.on {
-  fill: red;
+.on{
+	fill: red;
   box-shadow: inset 0px 0px 15px 2px rgba(255, 0, 0, 0.65);
+}
+
+.segmento{
+	position: absolute;
+	height: var(--escala);
+}
+
+.segmento:nth-child(1){
+	left: var(--left-horizontales);
+}
+
+.segmento:nth-child(2){
+	transform: rotate(90deg);
+	right: var(--right-segunda-columna);
+	top: var(--top-primera-fila);
+}
+
+.segmento:nth-child(3){
+	transform: rotate(90deg);
+	right: var(--right-segunda-columna);
+	top: calc(var(--escala) * 6);
+}
+
+.segmento:nth-child(4){
+	left: var(--left-horizontales);
+	top: calc(var(--escala) * 8);
+}
+
+.segmento:nth-child(5){
+	transform: rotate(90deg);
+	top: var(--top-segunda-fila);
+	left: var(--left-primera-columna);
+}
+
+.segmento:nth-child(6){
+	left: var(--left-horizontales);
+	top: calc(var(--escala) * 4 );
+}
+
+.segmento:nth-child(7){
+	transform: rotate(90deg);
+	top: var(--top-primera-fila);
+	left: var(--left-primera-columna);
+}
+
+.doble_punto{
+	position: relative;
+	height: var(--escala);
+	width: var(--escala);
+}
+
+.punto{
+	position: absolute;
+	background-color: red;
+	transform: rotate(45deg);
+	height: var(--escala);
+	width: var(--escala);
+}
+
+.punto:first-child{
+	top: calc( var(--escala) * 2 );
+	left: calc( var(--escala) * -0.45);
+}
+
+.punto:last-child{
+	top: calc( var(--escala) * 6 );
+	left: calc( var(--escala) * -0.45);
 }
 
 @keyframes glow {
