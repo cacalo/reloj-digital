@@ -7,6 +7,10 @@
 	--right-segunda-columna: 0px;
 }
 
+*{
+	user-select: none;
+}
+
 body{
 	background-color: brown;
 	display: flex;
